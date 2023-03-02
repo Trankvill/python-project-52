@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.1"
+description = "Task manager"
+authors = ["Konstantin Chupin <chupin.k@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "hexlet_code"}]
+repository = "<https://github.com/Trankvill/python-project-52>"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.1.7"
+gunicorn = "^20.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
