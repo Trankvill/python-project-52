@@ -36,7 +36,6 @@ Django==4.1.6
 django-extensions==3.2.1
 dogesay==1.0.0b1
 duplicity==0.8.21
-ello @ file:///home/konstantin/ello/dist/ello-0.1.0-py3-none-any.whl
 exceptiongroup==1.1.0
 executing==0.8.3
 fasteners==0.14.1
@@ -46,8 +45,6 @@ Flask-Session==0.4.0
 future==0.18.2
 gunicorn==20.1.0
 gyp==0.1
-hello @ file:///home/konstantin/hello/dist/hello-0.1.0-py3-none-any.whl
-hexlet-code @ file:///home/konstantin/python-project-83/dist/hexlet_code-0.5.3-py3-none-any.whl
 hexlet-python-package @ git+https://github.com/hexlet-boilerplates/python-package.git@eac25eac41ae467bd847a1842fed94f637ac935a
 html5lib==1.1
 httplib2==0.20.2
@@ -70,7 +67,6 @@ macaroonbakery==1.3.1
 Mako==1.1.3
 MarkupSafe==2.1.1
 matplotlib-inline==0.1.3
-message @ file:///home/konstantin/message/dist/message-0.1.0-py3-none-any.whl
 monotonic==1.6
 more-itertools==8.10.0
 msgpack==1.0.3
