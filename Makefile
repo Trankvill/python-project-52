@@ -10,3 +10,6 @@ gunicorn:
 
 test:
 	poetry run python3 manage.py test task_manager/tests
+
+shell:
+	poetry run python3 manage.py shell
