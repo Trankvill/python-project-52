@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.0"
+version = "0.5.0"
 description = "Task manager"
 authors = ["Konstantin Chupin <chupin.k@yandex.ru>"]
 readme = "README.md"
@@ -18,6 +18,7 @@ whitenoise = "^6.4.0"
 dj-database-url = "^1.2.0"
 flake8 = "^6.0.0"
 Faker = "^17.6.0"
+coverage = "^7.2.1"
 
 
 [build-system]
