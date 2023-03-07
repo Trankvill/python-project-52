@@ -21,9 +21,7 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-BOOTSTRAP4_FOLDER = os.path.abspath(os.path.join(BASE_DIR, "..", "bootstrap4"))
-if BOOTSTRAP4_FOLDER not in sys.path:
-    sys.path.insert(0, BOOTSTRAP4_FOLDER)
+FIXTURE_DIRS = (os.path.join(BASE_DIR, "fixtures"),)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -57,6 +55,7 @@ INSTALLED_APPS = [
     'task_manager',
     'task_manager.users',
     'task_manager.statuses',
+    'task_manager.tasks',
     'bootstrap4',
 ]
 
@@ -75,7 +74,7 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL = "users.User"
 
-ROOT_URLCONF = 'task_manager.urls'
+ROOT_URLCONF = "task_manager.urls"
 
 TEMPLATES = [
     {
@@ -133,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = os.getenv('LOCALE', default='ru')
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
