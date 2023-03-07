@@ -4,7 +4,7 @@
     "pk": 4,
     "fields": {
       "password": "$pbkdf2-sha256$29000$o1RKKWXsfW8NASBkbM0Z4w$gYxaDeCWP0.w9meylBPup2zYNiAkdodc0hmY7S48qbs",
-      "last_login": "2023-03-06T19:50:48.351Z",
+      "last_login": "2023-03-06T14:50:48.351Z",
       "is_superuser": false,
       "username": "Test_user_1",
       "first_name": "1",
@@ -12,7 +12,7 @@
       "email": "",
       "is_staff": false,
       "is_active": true,
-      "date_joined": "2023-03-06T19:49:59.659Z",
+      "date_joined": "2023-03-06T14:49:59.659Z",
       "groups": [],
       "user_permissions": []
     }
@@ -30,7 +30,7 @@
       "email": "",
       "is_staff": false,
       "is_active": true,
-      "date_joined": "2023-03-06T19:52:47.639Z",
+      "date_joined": "2023-03-06T14:52:47.639Z",
       "groups": [],
       "user_permissions": []
     }
