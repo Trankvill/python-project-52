@@ -8,6 +8,7 @@ class Status(models.Model):
     created_at = models.DateTimeField(_('creation date'), auto_now_add=True)
 
     class Meta:
+
         verbose_name = _('status')
         verbose_name_plural = _('statuses')
         ordering = ['id']

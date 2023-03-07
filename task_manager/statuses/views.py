@@ -16,6 +16,7 @@ class StatusesListView(LoginRequiredMixin, ListView):
     template_name = 'statuses/statuses.html'
     context_object_name = 'statuses'
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('Statuses')
@@ -29,6 +30,7 @@ class CreateStatusView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy('statuses:statuses')
     success_message = _('Status successfully created.')
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -44,6 +46,7 @@ class UpdateStatusView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'form.html'
     success_url = reverse_lazy('statuses:statuses')
     success_message = _('Status successfully changed.')
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

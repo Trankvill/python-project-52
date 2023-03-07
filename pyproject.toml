@@ -4,7 +4,9 @@ version = "0.5.0"
 description = "Task manager"
 authors = ["Konstantin Chupin <chupin.k@yandex.ru>"]
 readme = "README.md"
-packages = [{include = "task_manager"}]
+packages = [
+    {include = "task_manager"}
+]
 repository = "<https://github.com/Trankvill/python-project-52>"
 
 [tool.poetry.dependencies]

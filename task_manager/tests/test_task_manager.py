@@ -1,10 +1,10 @@
-from task_manager.users.forms import CreateUserForm
-from task_manager.users.models import User
+from http import HTTPStatus
 from django.template.response import TemplateResponse
 from django.test import Client, TestCase
 from django.urls import reverse_lazy
 from faker import Faker
-from http import HTTPStatus
+from task_manager.users.forms import CreateUserForm
+from task_manager.users.models import User
 
 
 class IndexPageViewTest(TestCase):

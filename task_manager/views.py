@@ -15,6 +15,7 @@ class LoginUserView(SuccessMessageMixin, LoginView):
     template_name = 'form.html'
     success_message = _('You successfully logged in')
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('Login')
@@ -23,6 +24,7 @@ class LoginUserView(SuccessMessageMixin, LoginView):
 
 
 class LogoutUserView(SuccessMessageMixin, LogoutView):
+
 
     def dispatch(self, request, *args, **kwargs):
         messages.add_message(

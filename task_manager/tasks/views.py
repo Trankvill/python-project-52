@@ -8,13 +8,14 @@ from django.views.generic import ListView, CreateView, DeleteView, DetailView, \
     UpdateView
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
-from tasl_manager.users.models import User
+from task_manager.users.models import User
 
 
 class TasksListView(LoginRequiredMixin, ListView):
     model = Task
     template_name = 'tasks/tasks.html'
     context_object_name = 'tasks'
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -27,6 +28,7 @@ class DetailedTaskView(LoginRequiredMixin, SuccessMessageMixin, DetailView):
     model = Task
     template_name = 'tasks/task_view.html'
     context_object_name = 'task_view'
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -42,9 +44,11 @@ class CreateTaskView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('tasks:tasks')
     success_message = _('Task successfully created.')
 
+
     def form_valid(self, form):
         form.instance.author = User.objects.get(pk=self.request.user.pk)
         return super().form_valid(form)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -61,6 +65,7 @@ class UpdateTaskView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('tasks:tasks')
     success_message = _('Task successfully updated.')
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('Change a task')
@@ -75,6 +80,7 @@ class DeleteTaskView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy('tasks:tasks')
     success_message = _('Task successfully deleted.')
 
+
     def form_valid(self, form):
         if self.get_object().author == self.request.user:
             super().form_valid(form)
@@ -84,6 +90,7 @@ class DeleteTaskView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
                 _('Task can be deleted only by author.'),
             )
         return redirect(self.success_url)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
