@@ -34,7 +34,7 @@ class TasksTest(TestCase):
         self.client.force_login(self.user1)
         new_task = {
             'name': 'test_task3',
-            'description': '123',
+            'description': '2134',
             'status': 6,
             'author': 5,
             'executor': 5,
@@ -52,7 +52,7 @@ class TasksTest(TestCase):
         self.client.force_login(self.user1)
         changed_data = {
             'name': 'test',
-            'description': '777',
+            'description': '4964',
             'status': 6,
             'author': 5,
             'executor': 5,
