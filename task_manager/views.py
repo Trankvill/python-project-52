@@ -14,11 +14,11 @@ class IndexView(TemplateView):
 class LoginUserView(SuccessMessageMixin, LoginView):
 
     template_name = 'form.html'
-    success_message = _('You successfully logged in')
+    success_message = _('You logged in')
     next_page = reverse_lazy('index')
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = _('Login')
+        context['title'] = _('Log in')
         context['button_text'] = _('Login')
         return context
 
@@ -31,6 +31,6 @@ class LogoutUserView(SuccessMessageMixin, LogoutView):
         messages.add_message(
             request,
             messages.INFO,
-            _('You logged out successfully')
+            _('You logged out')
         )
         return super().dispatch(request, *args, **kwargs)
