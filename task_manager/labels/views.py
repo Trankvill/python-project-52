@@ -15,7 +15,6 @@ class LabelsListView(LoginRequiredMixin, ListView):
     template_name = 'labels/labels.html'
     context_object_name = 'labels'
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('Labels')
@@ -29,7 +28,6 @@ class CreateLabelView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy('labels:labels')
     success_message = _('Label successfully created.')
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -46,7 +44,6 @@ class UpdateLabelView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('labels:labels')
     success_message = _('Label successfully updated.')
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('Change a label')
@@ -60,7 +57,6 @@ class DeleteLabelView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name = 'delete.html'
     success_url = reverse_lazy('labels:labels')
 
-
     def form_valid(self, form):
         if self.get_object().tasks.all():
             messages.error(
@@ -70,7 +66,6 @@ class DeleteLabelView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         else:
             super().form_valid(form)
         return redirect(self.success_url)
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
