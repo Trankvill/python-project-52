@@ -7,6 +7,11 @@ lint:
 test:
 		poetry run python3 manage.py test task_manager/tests
 
+test-coverage:
+		poetry run coverage run manage.py test task_manager/tests
+		poetry run coverage xml
+		poetry run coverage report
+
 version:
 		poetry run django-admin version
 
@@ -22,12 +27,6 @@ gunicorn:
 
 requirements:
 		poetry export --without-hashes -f requirements.txt -o requirements.txt
-
-locale:
-		python3 manage.py makemessages -l ru
-
-compile:
-		poetry run django-admin compilemessages --ignore=env
 
 makemigrations:
 		 poetry run python manage.py makemigrations
