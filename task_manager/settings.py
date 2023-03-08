@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 import dj_database_url
-import sys
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -41,7 +40,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-        'https://python-project-52-production-d00c.up.railway.app',
+    'https://python-project-52-production-d00c.up.railway.app',
 ]
 
 # Application definition
