@@ -18,20 +18,39 @@ from django.urls import path, include
 from task_manager import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.IndexView.as_view(), name='index'),
     path(
-    	'login/',
-    	views.LoginUserView.as_view(next_page='index'),
-    	name='login'
+        'admin/',
+        admin.site.urls
+    ),
+    path(
+        '',
+        views.IndexView.as_view(),
+        name='index'
+    ),
+    path(
+        'login/',
+        views.LoginUserView.as_view(next_page='index'),
+        name='login'
     ),
     path(
         'logout/',
         views.LogoutUserView.as_view(next_page='index'),
         name='logout'
     ),
-    path('users/', include('task_manager.users.urls')),
-    path('statuses/', include('task_manager.statuses.urls')),
-    path('tasks/', include('task_manager.tasks.urls')),
-    path('labels/', include('task_manager.labels.urls')),
+    path(
+        'users/',
+        include('task_manager.users.urls')
+    ),
+    path(
+        'statuses/',
+        include('task_manager.statuses.urls')
+    ),
+    path(
+        'tasks/',
+        include('task_manager.tasks.urls')
+    ),
+    path(
+        'labels/',
+        include('task_manager.labels.urls')
+    ),
 ]
