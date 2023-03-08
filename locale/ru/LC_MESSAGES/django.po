@@ -257,15 +257,15 @@ msgstr "Удалить пользователя"
 msgid "You logged in"
 msgstr "Вы залогинены"
 
-#: task_manager/views.py:21 templates/base.html:41
+#: task_manager/views.py:22 templates/base.html:41
 msgid "Log in"
 msgstr "Вход"
 
-#: task_manager/views.py:22
+#: task_manager/views.py:23
 msgid "Login"
 msgstr "Войти"
 
-#: task_manager/views.py:34
+#: task_manager/views.py:35
 msgid "You logged out"
 msgstr "Вы разлогинены"
 
