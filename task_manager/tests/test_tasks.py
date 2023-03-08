@@ -8,7 +8,7 @@ from task_manager.statuses.models import Status
 
 class TasksTest(TestCase):
 
-    fixtures = ["users.json", "statuses.json", "tasks.json"]
+    fixtures = ["users.json", "statuses.json", "tasks.json", "labels.json"]
 
 
     def setUp(self):
@@ -74,7 +74,6 @@ class TasksTest(TestCase):
                 args=(self.task1.id,),
             ),
         )
-        # noinspection PyTypeChecker
         with self.assertRaises(Task.DoesNotExist):
             Task.objects.get(pk=self.task1.id)
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
