@@ -10,7 +10,6 @@ class TasksTest(TestCase):
 
     fixtures = ["users.json", "statuses.json", "tasks.json", "labels.json"]
 
-
     def setUp(self):
         self.task1 = Task.objects.get(pk=7)
         self.task2 = Task.objects.get(pk=8)
@@ -21,14 +20,12 @@ class TasksTest(TestCase):
         self.status1 = Status.objects.get(pk=6)
         self.status2 = Status.objects.get(pk=7)
 
-
     def test_tasks(self):
         self.client.force_login(self.user1)
         response = self.client.get(reverse('tasks:tasks'))
         self.assertEqual(response.status_code, HTTPStatus.OK)
         tasks = list(response.context['tasks'])
         self.assertQuerysetEqual(tasks, [self.task1, self.task2])
-
 
     def test_create_task(self):
         self.client.force_login(self.user1)
@@ -47,7 +44,6 @@ class TasksTest(TestCase):
         created_task = Task.objects.get(name=new_task['name'])
         self.assertEquals(created_task.name, 'test_task3')
 
-
     def test_update_task(self):
         self.client.force_login(self.user1)
         changed_data = {
@@ -64,7 +60,6 @@ class TasksTest(TestCase):
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         changed_task = Task.objects.get(name='test')
         self.assertEqual(self.task1.id, changed_task.id)
-
 
     def test_delete_task(self):
         self.client.force_login(self.user1)
