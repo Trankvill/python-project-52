@@ -7,7 +7,7 @@ from task_manager.tasks.models import Task
 
 class LoginUserTest(TestCase):
 
-    fixtures = ["users.json", "statuses.json", "tasks.json"]
+    fixtures = ["users.json", "statuses.json", "tasks.json", "labels.json"]
 
 
     def setUp(self):
