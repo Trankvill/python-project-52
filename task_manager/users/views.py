@@ -15,7 +15,6 @@ class UserListView(ListView):
     template_name = 'users/users.html'
     context_object_name = 'users'
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('Users')
@@ -29,7 +28,6 @@ class CreateUserView(SuccessMessageMixin, CreateView):
     form_class = CreateUserForm
     success_url = reverse_lazy('login')
     success_message = _('User successfully registered.')
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -46,7 +44,6 @@ class UpdateUserView(SuccessMessageMixin, UserMixin, UpdateView):
     success_url = reverse_lazy('users:users')
     success_message = _('User successfully changed.')
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('Change a user')
@@ -59,7 +56,6 @@ class DeleteUserView(UserMixin, DeleteView):
     template_name = 'delete.html'
     success_url = reverse_lazy('users:users')
 
-
     def form_valid(self, form):
         if self.get_object().author.all() or self.get_object().executor.all():
             messages.error(
@@ -69,7 +65,6 @@ class DeleteUserView(UserMixin, DeleteView):
         else:
             super().form_valid(form)
         return redirect(self.success_url)
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
