@@ -6,10 +6,8 @@ from django.utils.translation import gettext as _
 
 class UserMixin(LoginRequiredMixin, UserPassesTestMixin):
 
-
     def test_func(self):
         return self.kwargs['pk'] == self.request.user.id
-
 
     def handle_no_permission(self):
         if self.request.user.is_authenticated:
