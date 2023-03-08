@@ -24,4 +24,3 @@ class UserMixin(LoginRequiredMixin, UserPassesTestMixin):
                 _("You are not authorized. Please login."),
             )
         return redirect(self.success_url)
-
