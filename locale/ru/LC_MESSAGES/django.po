@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-08 16:15+0500\n"
+"POT-Creation-Date: 2023-03-08 20:22+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,16 +69,20 @@ msgstr "Изменить метку"
 msgid "Change"
 msgstr "Изменить"
 
-#: task_manager/labels/views.py:64
+#: task_manager/labels/views.py:59
+msgid "Label successfully deleted."
+msgstr "Метка успешно удалена."
+
+#: task_manager/labels/views.py:65
 msgid "Cannot delete label because it is in use"
 msgstr "Невозможно удалить метку, потому что она используется"
 
-#: task_manager/labels/views.py:72
+#: task_manager/labels/views.py:73
 msgid "Delete label"
 msgstr "Удалить метку"
 
-#: task_manager/labels/views.py:73 task_manager/statuses/views.py:74
-#: task_manager/tasks/views.py:95 task_manager/users/views.py:72
+#: task_manager/labels/views.py:74 task_manager/statuses/views.py:74
+#: task_manager/tasks/views.py:95 task_manager/users/views.py:73
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
@@ -158,7 +162,7 @@ msgstr "задача"
 
 #: task_manager/tasks/models.py:43
 msgid "tasks"
-msgstr "Задачи"
+msgstr "задачи"
 
 #: task_manager/tasks/views.py:23 templates/base.html:30
 msgid "Tasks"
@@ -227,7 +231,7 @@ msgstr "Регистрация"
 
 #: task_manager/users/views.py:35
 msgid "Register"
-msgstr "Зарегистрироваться"
+msgstr "Зарегистрировать"
 
 #: task_manager/users/views.py:45
 msgid "User successfully changed."
@@ -237,25 +241,33 @@ msgstr "Пользователь успешно изменён."
 msgid "Change a user"
 msgstr "Изменить пользователя"
 
-#: task_manager/users/views.py:63
+#: task_manager/users/views.py:58
+msgid "User successfully deleted."
+msgstr "Пользователь успешно удалён."
+
+#: task_manager/users/views.py:64
 msgid "Cannot delete user because it is in use"
 msgstr "Невозможно удалить пользователя, потому что он используется"
 
-#: task_manager/users/views.py:71
+#: task_manager/users/views.py:72
 msgid "Delete a user"
 msgstr "Удалить пользователя"
 
-#: task_manager/views.py:16
-msgid "You successfully logged in"
-msgstr "Вы успешно залогинены"
+#: task_manager/views.py:17
+msgid "You logged in"
+msgstr "Вы залогинены"
 
-#: task_manager/views.py:20 task_manager/views.py:21
+#: task_manager/views.py:21 templates/base.html:41
+msgid "Log in"
+msgstr "Вход"
+
+#: task_manager/views.py:22
 msgid "Login"
 msgstr "Войти"
 
-#: task_manager/views.py:31
-msgid "You logged out successfully"
-msgstr "Вы успешно разлогинены"
+#: task_manager/views.py:34
+msgid "You logged out"
+msgstr "Вы разлогинены"
 
 #: templates/base.html:8 templates/base.html:13
 msgid "Task manager"
@@ -264,10 +276,6 @@ msgstr "Менеджер задач"
 #: templates/base.html:37
 msgid "Log out"
 msgstr "Выход"
-
-#: templates/base.html:41
-msgid "Log in"
-msgstr "Вход"
 
 #: templates/delete.html:13
 msgid "Are you sure you want to delete"
