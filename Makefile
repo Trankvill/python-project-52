@@ -34,3 +34,5 @@ makemigrations:
 migrate:
 		 poetry run python manage.py migrate
 
+shell:
+		poetry run python3 manage.py shell
