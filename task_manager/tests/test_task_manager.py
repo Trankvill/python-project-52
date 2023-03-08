@@ -9,7 +9,6 @@ from task_manager.users.models import User
 
 class IndexPageViewTest(TestCase):
 
-
     def test_page(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -17,10 +16,8 @@ class IndexPageViewTest(TestCase):
 
 class RegistrationPageViewTest(TestCase):
 
-
     def setUp(self):
         self.client: Client = Client()
-
 
     def test(self):
         response: TemplateResponse = self.client.get(
@@ -34,7 +31,6 @@ class RegistrationPageViewTest(TestCase):
         self._assert_password(form_fields, response)
         self._assert_password_confirmation(form_fields, response)
 
-
     def _assert_first_name(self, form_fields, response):
         self.assertIn(
             str(form_fields['first_name'].label),
@@ -44,7 +40,6 @@ class RegistrationPageViewTest(TestCase):
             str(form_fields['first_name'].help_text),
             response.rendered_content,
         )
-
 
     def _assert_last_name(self, form_fields, response):
         self.assertIn(
@@ -56,7 +51,6 @@ class RegistrationPageViewTest(TestCase):
             response.rendered_content,
         )
 
-
     def _assert_username(self, form_fields, response):
         self.assertIn(
             str(form_fields['username'].label),
@@ -67,7 +61,6 @@ class RegistrationPageViewTest(TestCase):
             response.rendered_content,
         )
 
-
     def _assert_password(self, form_fields, response):
         self.assertIn(
             str(form_fields['password1'].label),
@@ -77,7 +70,6 @@ class RegistrationPageViewTest(TestCase):
             str(form_fields['password1'].help_text),
             response.rendered_content,
         )
-
 
     def _assert_password_confirmation(self, form_fields, response):
         self.assertIn(
@@ -92,11 +84,9 @@ class RegistrationPageViewTest(TestCase):
 
 class SuccessRegistrationTest(TestCase):
 
-
     def setUp(self):
         self.faker = Faker()
         self.client = Client()
-
 
     def test(self):
         first_name = self.faker.first_name()
