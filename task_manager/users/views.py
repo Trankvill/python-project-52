@@ -26,7 +26,7 @@ class CreateUserView(SuccessMessageMixin, CreateView):
     model = User
     template_name = 'form.html'
     form_class = CreateUserForm
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('login')
     success_message = _('User successfully registered.')
 
     def get_context_data(self, **kwargs):
@@ -51,10 +51,11 @@ class UpdateUserView(SuccessMessageMixin, UserMixin, UpdateView):
         return context
 
 
-class DeleteUserView(UserMixin, DeleteView):
+class DeleteUserView(SuccessMessageMixin, UserMixin, DeleteView):
     model = User
     template_name = 'delete.html'
     success_url = reverse_lazy('users:users')
+    success_message = _('User successfully deleted.')
 
     def form_valid(self, form):
         if self.get_object().author.all() or self.get_object().executor.all():
