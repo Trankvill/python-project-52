@@ -11,7 +11,6 @@ class TestLabel(TestCase):
 
     fixtures = ["users.json", "statuses.json", "tasks.json", 'labels.json']
 
-
     def setUp(self):
         self.label1 = Label.objects.get(pk=1)
         self.label2 = Label.objects.get(pk=2)
@@ -20,7 +19,6 @@ class TestLabel(TestCase):
         self.status1 = Status.objects.get(pk=6)
         self.task1 = Task.objects.get(pk=7)
         self.user = User.objects.get(pk=5)
-
 
     def test_labels(self):
         self.client.force_login(self.user)
@@ -37,7 +35,6 @@ class TestLabel(TestCase):
             ],
         )
 
-
     def test_create_label(self):
         self.client.force_login(self.user)
         new_label = {'name': "test_label5"}
@@ -45,7 +42,6 @@ class TestLabel(TestCase):
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         created_label = Label.objects.get(name=new_label['name'])
         self.assertEquals(created_label.name, "test_label5")
-
 
     def test_update_label(self):
         self.client.force_login(self.user)
@@ -56,7 +52,6 @@ class TestLabel(TestCase):
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         self.assertEqual(Label.objects.get(pk=self.label1.id), self.label1)
-
 
     def test_delete_label(self):
         self.client.force_login(self.user)
