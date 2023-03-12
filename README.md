@@ -8,7 +8,7 @@
 Task Manager is a task management system similar to http://www.redmine.org /. It allows you to set tasks, assign performers and change their statuses. Registration and authentication are required to work with the system.
 
 
-### Local intallation:
+### Local installation:
 
 1) Clone the repository and go to the project folder:
 
