@@ -63,3 +63,11 @@ class TestLabel(TestCase):
             Label.objects.get(pk=self.label1.pk)
 
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
+
+    def test_delete_label_if_use(self):
+        self.client.force_login(self.user)
+        response = self.client.post(
+            reverse('labels:delete', args=(self.label1.pk,))
+        )
+        self.assertTrue(Label.objects.filter(pk=self.label1.id).exists())
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
