@@ -47,6 +47,14 @@ class StatusesTest(TestCase):
         changed_status = Status.objects.get(name='test')
         self.assertEqual(self.status1.id, changed_status.id)
 
+    def test_delete_status_if_use(self):
+        self.client.force_login(self.user)
+        response = self.client.post(
+            reverse('statuses:delete', args=(self.status1.pk,))
+        )
+        self.assertTrue(Status.objects.filter(pk=self.status1.id).exists())
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
+
     def test_delete_status(self):
         self.client.force_login(self.user)
         Task.objects.all().delete()
