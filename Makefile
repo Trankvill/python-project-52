@@ -5,10 +5,10 @@ lint:
 		poetry run flake8 task_manager
 
 test:
-		poetry run python3 manage.py test task_manager/tests
+		poetry run python3 manage.py test tests
 
 test-coverage:
-		poetry run coverage run manage.py test task_manager/tests
+		poetry run coverage run manage.py test tests
 		poetry run coverage xml
 		poetry run coverage report
 
