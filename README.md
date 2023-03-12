@@ -18,7 +18,7 @@ cd python-project-52
 ```
 2) Create file ".env" with environment variables:
 
-The file ".env" should be created in root directory.
+Note: The file ".env" should be created in root directory.
 ```
 SECRET_KEY='insert your django secret key here'
 ACCESS_TOKEN='insert your token from Rollbar error tracker here'
