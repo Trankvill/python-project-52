@@ -7,5 +7,31 @@
 ### Description:
 Task Manager is a task management system similar to http://www.redmine.org /. It allows you to set tasks, assign performers and change their statuses. Registration and authentication are required to work with the system.
 
-### Domain link:
-[Project "Task manager" on Railway](https://python-project-52-production-d00c.up.railway.app/)
+
+### Local intallation:
+
+1) Clone the repository and go to the project folder:
+
+```
+git clone https://github.com/Trankvill/python-project-52
+cd python-project-52
+```
+2) Create file ".env" with environment variables:
+
+The file ".env" should be created in root directory.
+```
+SECRET_KEY='insert your django secret key here'
+ACCESS_TOKEN='insert your token from Rollbar error tracker here'
+```
+3) Install dependencies:
+```
+make install
+```
+4) Apply migrations:
+```
+make migrate
+```
+Run application at http://127.0.0.1:8000/:
+```
+make runserver
+```
