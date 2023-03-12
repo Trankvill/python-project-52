@@ -73,6 +73,14 @@ class TasksTest(TestCase):
             Task.objects.get(pk=self.task1.id)
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
 
+    def test_delete_task_by_not_author(self):
+        self.client.force_login(self.user2)
+        response = self.client.post(
+            reverse('tasks:delete', args=(self.task1.id, )),
+        )
+        self.assertTrue(Task.objects.filter(pk=self.task1.pk).exists())
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
+
     def test_filter_by_status(self):
         self.client.force_login(self.user1)
         filtered_by_status = f'{reverse("tasks:tasks")}?status=6'
